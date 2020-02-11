@@ -1,0 +1,57 @@
+<!-- TITLE -->
+<div class="mb-40 mt-40">
+    <h1>FevContacts Edit</h1>
+</div>
+<div class="card mb-40">
+    <div class="card-header">
+        <i class="fa fa-edit"></i> Edit
+    </div>
+    <div class="card-body">
+        <form #editForm="ngForm" [ngClass]="{'was-validated': formValid!=null}">
+            <div class="row justify-content-md-center">
+                <div class="col-md-10">
+                    <div class="form-group">
+                        <label for="NUMBER">NUMBER</label>
+                        <input type="text" class="form-control" id="NUMBER" [(ngModel)]="item.NUMBER" name="NUMBER" #NUMBER="ngModel" >
+                    </div>
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" class="form-control" id="name" [(ngModel)]="item.name" name="name" #name="ngModel" >
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone</label>
+                        <input type="text" class="form-control" id="phone" [(ngModel)]="item.phone" name="phone" #phone="ngModel" >
+                    </div>
+                    <div class="form-group">
+                        <label for="photo">Photo</label>
+                        <input type="text" class="form-control" id="photo" [(ngModel)]="item.photo" name="photo" #photo="ngModel" >
+                    </div>
+                    <div class="form-group">
+                        <label for="relation">Relation</label>
+                        <input type="text" class="form-control" id="relation" [(ngModel)]="item.relation" name="relation" #relation="ngModel" >
+                    </div>
+                    <div class="form-group">
+                        <label for="userid">Userid</label>
+                        <input type="text" class="form-control" id="userid" [(ngModel)]="item.userid" name="userid" #userid="ngModel" >
+                    </div>
+                    <!-- RELATIONS -->
+                    <h2 class="mb-20">Relations</h2>
+
+                    <label for="User">User</label>
+                    <select name="uid" id="uid" [(ngModel)]="item.uid" class="form-control" #uid="ngModel"  >
+                        <option *ngFor="let item of listUid" [value]="item.id">{{item.id}}</option>
+                    </select>
+
+                    
+        
+
+                    <!-- BUTTON BAR -->
+                    <div class="mt-40">
+                        <button class="btn btn-primary pull-right" (click)="save(editForm.valid)">Save</button>
+                        <button class="btn btn-secondary pull-right mr-2" (click)="goBack()">Back To List</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
