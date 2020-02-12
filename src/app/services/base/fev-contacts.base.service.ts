@@ -98,6 +98,22 @@ export class FevContactsBaseService {
     }
 
     /**
+    * FevContactsService.findByuid
+    *   @description CRUD ACTION findByuid
+    *   @param Objectid key Id of model to search for
+    *
+    */
+    findByUid(id: string): Observable<any[]> {
+        return this.afs.collection('fevcontacts', ref => ref.where('uid', '==', id)).snapshotChanges().pipe(
+            map(actions => actions.map(a => {
+                const data = a.payload.doc.data() as FevContacts;
+                const id = a.payload.doc.id;
+                return { id, ...data };
+            }))
+        );
+    }
+
+    /**
     * FevContactsService.get
     *   @description CRUD ACTION get
     *   @param ObjectId id Id resource

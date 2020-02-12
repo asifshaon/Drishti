@@ -235,6 +235,39 @@ paths:
           application/json:
             schema:
               $ref: "#/components/schemas/FevContacts"
+  "/fevcontacts/findByuid/{key}":
+    get:
+      x-skaffolder-id: 5e442acf753bad4cb0883467
+      x-skaffolder-name: findByuid
+      x-skaffolder-id-resource: 5e4211c41bc8442d16aded7b
+      x-skaffolder-resource: FevContacts
+      x-skaffolder-crudAction: findByuid
+      x-skaffolder-crudType: 
+      x-skaffolder-description: CRUD ACTION findByuid
+      x-skaffolder-returnDesc: 
+      x-skaffolder-returnType: 
+      x-skaffolder-url: /findByuid/{key}
+      x-skaffolder-roles: []
+      summary: CRUD ACTION findByuid
+      tags:
+        - FevContacts
+      parameters:
+        - name: key
+          x-skaffolder-type: Objectid
+          in: path
+          description: Id of model to search for
+          required: true
+          schema:
+            type: Objectid
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/FevContacts"
   "/user/{id}/changePassword":
     post:
       x-skaffolder-id: 5e4210ec1bc8442d16aded24
@@ -543,6 +576,32 @@ components:
       x-skaffolder-nesteds: 
       x-skaffolder-links:
         - 5e4211d61bc8442d16aded83
+        - 5e442acf753bad4cb0883469
+      x-skaffolder-roles: []
+    - x-skaffolder-id: 5e442acf753bad4cb0883466
+      x-skaffolder-name: UserEdit
+      x-skaffolder-url: /users/{id}
+      x-skaffolder-template: Edit_Crud
+      x-skaffolder-resource: 5e4210eb1bc8442d16aded1b
+      x-skaffolder-services:
+        - 5e4210ec1bc8442d16aded23
+        - 5e4210ec1bc8442d16aded1e
+        - 5e4210ec1bc8442d16aded25
+        - 5e442acf753bad4cb0883467
+      x-skaffolder-nesteds: 
+      x-skaffolder-links: 
+      x-skaffolder-roles: []
+    - x-skaffolder-id: 5e442acf753bad4cb0883469
+      x-skaffolder-name: UserList
+      x-skaffolder-url: /users
+      x-skaffolder-template: List_Crud
+      x-skaffolder-resource: 5e4210eb1bc8442d16aded1b
+      x-skaffolder-services:
+        - 5e4210ec1bc8442d16aded1f
+        - 5e4210ec1bc8442d16aded22
+      x-skaffolder-nesteds: 
+      x-skaffolder-links:
+        - 5e442acf753bad4cb0883466
       x-skaffolder-roles: []
   x-skaffolder-roles: 
     - x-skaffolder-id: 5e4210ec1bc8442d16aded1d

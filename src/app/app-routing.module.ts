@@ -16,6 +16,8 @@ const routes: Routes = [
     { path: 'fevcontactses/:id', loadChildren: './pages/fev-contacts-edit/fev-contacts-edit.module#FevContactsEditModule', canActivate: [AuthGuard] },
     { path: 'fevcontactses', loadChildren: './pages/fev-contacts-list/fev-contacts-list.module#FevContactsListModule', canActivate: [AuthGuard] },
     { path: 'home', loadChildren: './pages/home/home.module#HomeModule', canActivate: [AuthGuard] },
+    { path: 'users/:id', loadChildren: './pages/user-edit/user-edit.module#UserEditModule', canActivate: [AuthGuard] },
+    { path: 'users', loadChildren: './pages/user-list/user-list.module#UserListModule', canActivate: [AuthGuard] },
 
  /* END MY VIEWS */
 
